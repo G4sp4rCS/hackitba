@@ -4,3 +4,4 @@ email
 imaplib
 dotenv
 imap_tools
+flask
