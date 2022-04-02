@@ -61,3 +61,6 @@ graph LR
 A[Beta 0.1 Prueba de Concepto Abr 2022]-->B[1.0 Version de produccion ETA: Jul 2022] --> C[2.0 Agregado IA para reconocimiento facial ETA: Mar 2023] 
 ```
 
+# Diagrama de arquitectura en la nube
+```
+![Diagrama](tes.png)
