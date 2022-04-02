@@ -1,2 +1,6 @@
 selenium
 webdriver_manager
+email
+imaplib
+dotenv
+imap_tools
