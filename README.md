@@ -62,5 +62,5 @@ A[Beta 0.1 Prueba de Concepto Abr 2022]-->B[1.0 Version de produccion ETA: Jul 2
 ```
 
 # Diagrama de arquitectura en la nube
-```
+
 ![Diagrama](tes.png)
