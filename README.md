@@ -47,6 +47,8 @@ SPB corre en un servidor, con un web scrapper (selenium) activando la funcionali
 
 Dado que el concepto de SPB es una situacion de emergencia, como ser robo en la via publica, o sustraccion o perdida, SPB permite descargar en cualquier telefono la app, logearse usando la tecnologia de lectura de huellas digitales o reconocimiento por IA(V2.0) si no estuviera la huella disponible, y le permitira inmediatamente ejecutar el boton de panico. Luego, con mayor tranquilidad y lejos del peligro podra acceder a esta app, obtener las nuevas claves, y renovar sus contraseñas por las de su preferencia. 
 
+Buscamos evitar los captcha usando delays en el codigo, pero si detectamos un Captcha usamos la api de https://anti-captcha.com/ que esta resueltos por humanos.
+
 # Roadmap
 
 SBP tiene previstos los siguientes upgrades
