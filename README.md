@@ -7,23 +7,26 @@ Si perdes o te roban tu telefono celular, o simplemente notas que estas siendo h
 
 ## Informacion de compilacion
 
-Version: 0.1 Beta, released April 3, 2022, ITBA - Buenos Aires, Argentina. Modalidad presencial
-Github: https://github.com/igruntplay/hackitba
+Version: 0.1 Beta, released April 3, 2022, ITBA - Buenos Aires Argentina. Modalidad presencial.
+
+Github: https://github.com/igruntplay/hackitba.
+
 Creators: Gaspar Onesto, Cristian Arean, Leandro Planas.
-Equipo: Vodka Juniors
+
+Equipo: Vodka Juniors.
 
 ## Redes Compatibles
 Trabajamos para constantemente agregar nuevas redes a nuestra app, vea las redes compatibles en segun la version
 
 Prueba de Concepto V0.1: 
-Twitter
+ -Twitter
 
 Produccion, Version 1 (ETA Julio 2022):
-Twitter 
-Instagram
-Linkedin
-Facebook
-Discord
+ - Twitter 
+ - Instagram
+ - Linkedin
+ - Facebook
+ - Discord
 
 ## Funcionamiento
 SPB frente a la orden del usuario, cambiara todas las contraseñas de las redes sociales seleccionadas, solicitando la renovacion de la contraseña en las redes indicadas, escuchando los correos de renovacion de password, y posterior al cambio, grabara internamente la nueva password.
