@@ -41,7 +41,7 @@ Para configurar su usuario de SPB necesita lo siguiente:
 - Fotografia tipo selfie (disponible en V2.0)
 
 Una vez descargada la app, debera crear un usuario con su correo y una password de acceso, luego, le pedira ingresar su huella digital, si esto no estuviera disponible, le pedira tomarse una selfie (disponible en V2.0). 
-=======
+
 SPB es una app facil de usar, inspirados en las "paradas de emergencia" de las maquinas, que automatiza la ardua tarea de bloquear las redes en caso de emergencia. Frente a la orden del usuario, cambiara todas las contraseñas de las redes sociales seleccionadas, solicitando la renovacion de la contraseña en las redes indicadas, y posterior al cambio, enviara la nueva password.
 
 Para configurar su usuario de SPB necesita lo siguiente:
@@ -52,7 +52,6 @@ Para configurar su usuario de SPB necesita lo siguiente:
 - Fotografia tipo selfie (disponible en V2.0)
 
 Una vez descargada la app, debera crear un usuario con su correo y una password de acceso, luego, le pedira ingresar su documento y huella digital, si esto no estuviera disponible, le pedira tomarse una selfie (disponible en V2.0). 
->>>>>>> 1e8b50854938a0f74ec554f7f5d9d75e271be9ba
 
 Configurada la app, simplemente tendra disponible el boton de panico, al activarlo se ejecuta el funcionamiento, reiniciando todas las claves solicitadas. Para editar las opciones debera presionar los 3 puntos, en el borde superior de la pantalla. 
 
@@ -78,10 +77,7 @@ A[Beta 0.1 Prueba de Concepto Abr 2022]-->B[1.0 Version de produccion ETA: Ago 2
 ```
 # Palabras finales 
 Esta app fue pensada para ayudar a personas con dificultades con la tecnologia, quienes muchas veces ven sus redes vulneradas al sufrir perdida o robo de sus telefonos celulares por no poseer los conocimientos para asegurar sus redes repidamente. Hemos diseñado y codeado esta app con amor pensando en nuestro padres como potenciales usuarios de la misma. Toda sugerencia, es bien recibida. 
-<<<<<<< HEAD
-=======
 
 # Diagrama de arquitectura en la nube
 
 ![Diagrama](tes.png)
->>>>>>> 1e8b50854938a0f74ec554f7f5d9d75e271be9ba
