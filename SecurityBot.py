@@ -77,7 +77,7 @@ class RedbButtom:
         self.is_logged_in = False
         self.options = Options()
         self.service = Service(executable_path=GeckoDriverManager().install())
-        #self.options.headless = True
+        self.options.headless = True
         self.profile_path = "/home/cristian/.mozilla/firefox/i42mr4f8.default" 
         self.options.set_preference('profile', self.profile_path)
         self.driver = webdriver.Firefox(service=self.service, options=self.options) #firefox_options=options
