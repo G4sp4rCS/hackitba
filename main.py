@@ -1,4 +1,4 @@
 from SecurityBot import *
-if __name__ == '__main__':
+def main():
     bot = RedbButtom()
     bot.forgot()
