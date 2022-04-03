@@ -1,12 +1,54 @@
-<!doctype html>
-<head><title>Test</title> 
-    <meta charset=utf-8> </head>
-    <body>
-        <h1>My Website</h1>
-        <form action="/my-link/">
-            <input type="submit" value="Click me" />
-        </form>
-        
-        <button> <a href="/my-link/">Click me</a></button>
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> 
+    <title>SocialPanicButton</title>
 
-    </body>
+    <style type="text/css">
+        h1 {
+            color:black;
+        }
+        .xyz {
+            background-size: auto;
+            text-align: center;
+            padding-top: 100px;
+        }
+        .btn-circle.btn-sm {
+            width: 30px;
+            height: 30px;
+            padding: 6px 0px;
+            border-radius: 15px;
+            font-size: 8px;
+            text-align: center;
+        }
+        .btn-circle.btn-md {
+            width: 50px;
+            height: 50px;
+            padding: 7px 10px;
+            border-radius: 25px;
+            font-size: 10px;
+            text-align: center;
+        }
+        .btn-circle.btn-xl {
+            width: 90px;
+            height: 90px;
+            padding: 30px 16px;
+            border-radius: 45px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body class="xyz" >
+    <div class="d-flex justify-content-center p-4">
+        <h1 class="text-center"> ¿Activar Social Panic Button?</h1>
+    </div>
+    <form class="d-flex justify-content-center p-4">
+       <a href="/my-link/" class="btn btn-danger btn-circle btn-xl" tabindex="-1" role="button">Click Me</a>
+    </form>
+    <div class="d-flex justify-content-center p-4">
+        <p> <strong style="color: red;">Atencion:</strong> Al presionar el boton, todas sus redes sociales asociadas seran afectadas por el cambio de contraseña. Utilice este boton solo en casos de emergencia </p>
+    </div>
+</body>
+</html>
