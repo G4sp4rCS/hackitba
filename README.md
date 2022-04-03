@@ -30,7 +30,7 @@ Produccion, V1.0 (ETA Julio 2022):
  - Discord
 
 ## Funcionamiento
-<<<<<<< HEAD
+
 SPB es una app facil de usar, inspirados en las "paradas de emergencia" de las maquinas, que automatiza la ardua tarea de bloquear las redes en caso de emergencia. Frente a la orden del usuario, cambiara todas las contraseñas de las redes sociales seleccionadas, solicitando la renovacion de la contraseña en las redes indicadas, y posterior al cambio, grabara internamente la nueva password.
 
 Para configurar su usuario de SPB necesita lo siguiente:
