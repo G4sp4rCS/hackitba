@@ -1,8 +1,6 @@
 from flask import Flask, render_template
 from getCreds import mailCredentials
-
-mail, password = mailCredentials()
-
+from main import main
 app = Flask(__name__)
 
 @app.route('/')
@@ -11,8 +9,7 @@ def index():
 
 @app.route('/my-link/')
 def my_link():
-  print (mail, password) # Acá se va a ejecutar el script 
-
+  main()
   return 'Click.'
 
 if __name__ == '__main__':
