@@ -1,3 +1,4 @@
+import smtplib
 from selenium import webdriver
 from selenium import common
 from selenium.webdriver.common import keys
@@ -22,6 +23,29 @@ def mailCredentials():
     mail = os.getenv('MAIL')
     password = os.getenv('PASSWORD')
     return mail, password
+
+def email_sender(user, password, new_passwd):
+    sent_from = user
+    to = user
+    subject = "This is your new twitter password"
+
+    email_text = f"""\
+From: {sent_from}
+To: {to}
+Subject: {subject}
+
+Your new password is {new_passwd}
+"""
+    try:
+        smtp_server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+        smtp_server.ehlo()
+        smtp_server.login(user, password)
+        smtp_server.sendmail(sent_from, to, email_text)
+        smtp_server.close()
+        print ("Email sent successfully!")
+    except Exception as ex:
+        print ("Something went wrong….",ex)
+
     
 
 
@@ -102,4 +126,7 @@ class RedbButtom:
         time.sleep(4)
         path_reset_passwd = "/html/body/div/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div"
         WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, path_reset_passwd))).click()
+        email_sender(mail, password, new_passwd)
         return True
+
+    
