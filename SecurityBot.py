@@ -22,15 +22,8 @@ def mailCredentials():
     mail = os.getenv('MAIL')
     password = os.getenv('PASSWORD')
     return mail, password
+    
 
-options = Options()
-options.headless = True
-service = Service(executable_path=GeckoDriverManager().install())
-options= Options()
-profile_path = "/home/cristian/.mozilla/firefox/i42mr4f8.default" 
-options.set_preference('profile', profile_path)
-driver = webdriver.Firefox(service=service, options=options) #firefox_options=options
-default_length = 12
 
 def get_random_string(length):
     # choose from all lowercase letter
@@ -57,8 +50,15 @@ class RedbButtom:
     def __init__(self, email = None, services = None):
         self.email = email
         self.services = services
-        self.bot = driver
         self.is_logged_in = False
+        self.options = Options()
+        self.service = Service(executable_path=GeckoDriverManager().install())
+        #self.options.headless = True
+        self.profile_path = "/home/cristian/.mozilla/firefox/i42mr4f8.default" 
+        self.options.set_preference('profile', self.profile_path)
+        self.driver = webdriver.Firefox(service=self.service, options=self.options) #firefox_options=options
+        self.bot = self.driver
+        self.default_length = 12
 
 
     def forgot(self):
@@ -70,36 +70,36 @@ class RedbButtom:
         time.sleep(5)
         bot.find_element_by_link_text("Sign in").click()
         time.sleep(7)
-        new_passwd = get_random_string(default_length)
+        new_passwd = get_random_string(self.default_length)
         print("esta es la contra nueva", new_passwd)
         try:
             bot.find_element_by_link_text("Forgot password?").click()
         except:
             bot.find_element_by_xpath("/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div/div[7]/div/span/span").click()
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "/html/body/div/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[2]/label/div/div[2]/div/input"))).send_keys(mail)
+        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, "/html/body/div/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[2]/label/div/div[2]/div/input"))).send_keys(mail)
         time.sleep(3)
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "/html/body/div/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div/div/div"))).click()
+        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, "/html/body/div/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div/div/div"))).click()
         time.sleep(4)
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH,"/html/body/div/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[2]/div/label/div"))).click()
+        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH,"/html/body/div/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[2]/div/label/div"))).click()
         time.sleep(5)
         path = "/html/body/div/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div/div[2]"
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH,path))).click() #aca va el next
+        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH,path))).click() #aca va el next
         time.sleep(7)
         #aca ingresamos codigo
         codigo = check_for_recovery_email(mail, password)
         path_email_code = "/html/body/div/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[2]/label/div/div[2]/div/input"
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH,path_email_code ))).send_keys(codigo)
+        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH,path_email_code ))).send_keys(codigo)
         #aca apretamos el voton de verify
         time.sleep(5)
         path_verify = "/html/body/div/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div/div"
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH,path_verify ))).click()
+        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH,path_verify ))).click()
         #aca ingresamos contrasenias
         path_input_first = "/html/body/div/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div/div[2]/div/label/div/div[2]/div[1]/input" #aca va el primer inglreso de nueva contrasenia
         path_input_second = "/html/body/div/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div/div[3]/div/label/div/div[2]/div[1]/input"
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, path_input_first))).send_keys(new_passwd)
+        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, path_input_first))).send_keys(new_passwd)
         time.sleep(7)
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, path_input_second))).send_keys(new_passwd)
+        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, path_input_second))).send_keys(new_passwd)
         time.sleep(4)
         path_reset_passwd = "/html/body/div/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div"
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, path_reset_passwd))).click()
+        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, path_reset_passwd))).click()
         return True
