@@ -5,3 +5,4 @@ imaplib
 dotenv
 imap_tools
 flask
+imap-tools
